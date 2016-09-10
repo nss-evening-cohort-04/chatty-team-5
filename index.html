@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Chatty Kathy</title>
-</head>
-<body>
-<input id="user-message" type="input" placeholder="Enter your message...">
-<button id="clear-messges">Clear Messages</button>
-<div id="theme-settings">
-<input class="input" type="checkbox" name="chk_None_provided" id="dark-theme" value=""> Dark Theme
-<input class="input" type="checkbox" name="chk_None_provided" id="large-text" value=""> Large Text
-</div>
-<div id="entered-messages"></div>
-</body>
+   <head>
+      <title>Chatty Kathy</title>
+   </head>
+   <body>
+      <input id="user-input" type="input" placeholder="Enter your message...">
+      <button id="clear-messges">Clear Messages</button>
+      <div id="theme-settings">
+         <input class="input" type="checkbox" name="chk_None_provided" id="dark-theme" value=""> Dark Theme
+         <input class="input" type="checkbox" name="chk_None_provided" id="large-text" value=""> Large Text
+      </div>
+      <div id="entered-messages"></div>
+      <script type="text/javascript" src="JS/chatty.js"></script>
+      <script type="text/javascript" src="JS/DOMHandler.js"></script>
+      <script type="text/javascript" src="JS/deleter.js"></script>
+   </body>
 </html>
