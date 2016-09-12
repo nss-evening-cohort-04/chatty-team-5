@@ -20,7 +20,6 @@ var Chatty = (function () {
     },
     eraseMessages: function(msgId) {
       fixedMessages.splice(msgId, 1);
-      console.log(msgId);
     }
 
 }
