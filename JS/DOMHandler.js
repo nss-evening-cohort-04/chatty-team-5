@@ -5,16 +5,19 @@ function printMessages (json) {
   var counter = 0;
   messageContainer.innerHTML = "";
   for (var i = 0; i < json.length; i++) {
-    messageContainer.innerHTML += "<div id=message-" + counter + ">" + json[i].value + " " + "<button id=delete-button>Delete</button></div>";
+    messageContainer.innerHTML += "<div id=" + counter + ">" + json[i].value + " " + "<button id=delete-button>Delete</button></div>";
     counter++;
-    // console.log(json);
+    
   }
+
 }
 
 document.querySelector("body").addEventListener("click", function(e) {
   if (e.target.id === "delete-button") {
     var elementToDelete = e.target.parentNode;
     Chatty.removeFromDOM(elementToDelete);
+    var idToDelete = e.target.parentNode.id;
+    Chatty.removeFromArray(idToDelete);
   }
 
 

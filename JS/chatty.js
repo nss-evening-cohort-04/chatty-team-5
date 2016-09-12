@@ -17,7 +17,12 @@ var Chatty = (function () {
     messageLoader.open("GET", "storedMessages.JSON");
     messageLoader.send();
 
+    },
+    eraseMessages: function(msgId) {
+      fixedMessages.splice(msgId, 1);
+      console.log(msgId);
     }
+
 }
 
 
