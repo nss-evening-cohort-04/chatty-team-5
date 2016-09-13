@@ -34,7 +34,10 @@ userInput.addEventListener("keypress", function(e) {
 
 });
 
-//Change Theme Modal
+Chatty.loadFixedMessages();
+
+
+
 var greenYellow = document.getElementById("greenYellow");
 var yellowBlue = document.getElementById("yellowBlue");
 var blueGreen = document.getElementById("blueGreen");
@@ -55,9 +58,3 @@ themeSubmit.addEventListener('click', function(){
     document.querySelector("body").classList.add("green-yellow");
   }
 });
-
-   
-
-
-
-Chatty.loadFixedMessages();
