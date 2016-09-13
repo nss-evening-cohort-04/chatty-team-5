@@ -1,3 +1,4 @@
+
 var userInput = document.getElementById("user-input");
 var messageContainer = document.getElementById("entered-messages");
 
@@ -7,7 +8,7 @@ function printMessages (json) {
   for (var i = 0; i < json.length; i++) {
     messageContainer.innerHTML += "<div id=" + counter + ">" + json[i].value + " " + "<button id=delete-button>Delete</button></div>";
     counter++;
-    
+
   }
 
 }
@@ -36,3 +37,16 @@ userInput.addEventListener("keypress", function(e) {
 
 
 Chatty.loadFixedMessages();
+
+
+var darkThemeChecked = document.getElementById("dark-theme");
+  function makeDarkTheme(){
+    if (darkThemeChecked.checked === true){
+    document.querySelector("body").classList.add("darktheme");
+}
+    else {
+    document.querySelector("body").classList.remove("darktheme");
+  }
+}
+
+

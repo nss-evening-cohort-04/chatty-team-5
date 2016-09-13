@@ -2,13 +2,14 @@
 <html>
    <head>
       <title>Chatty Kathy</title>
+      <link rel="stylesheet" type="text/css" href="stylez.css">
    </head>
    <body>
       <input id="user-input" type="input" placeholder="Enter your message...">
       <button id="clear-messges">Clear Messages</button>
       <div id="theme-settings">
-         <input class="input" type="checkbox" name="chk_None_provided" id="dark-theme" value=""> Dark Theme
-         <input class="input" type="checkbox" name="chk_None_provided" id="large-text" value=""> Large Text
+         <input class="input" class="darktheme" type="checkbox" name="chk_None_provided" id="dark-theme" value="" onclick="makeDarkTheme()"> Dark Theme
+         <input class="input" class="largetheme" type="checkbox" name="chk_None_provided" id="large-text" value=""> Large Text
       </div>
       <div id="entered-messages"></div>
       <script type="text/javascript" src="JS/chatty.js"></script>
@@ -16,3 +17,9 @@
       <script type="text/javascript" src="JS/deleter.js"></script>
    </body>
 </html>
+
+
+
+
+
+
