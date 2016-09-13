@@ -8,7 +8,6 @@ function printMessages (json) {
   for (var i = 0; i < json.length; i++) {
     messageContainer.innerHTML += "<div id=" + counter + ">" + json[i].value + " " + "<button id=delete-button>Delete</button></div>";
     counter++;
-
   }
 
 }
