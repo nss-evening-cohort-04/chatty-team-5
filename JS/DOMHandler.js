@@ -21,6 +21,8 @@ document.querySelector("body").addEventListener("click", function(e) {
   }
   if (e.target.id === "clear-messages") {
     var allDivs = messageContainer.children;
+    console.log(messageContainer);
+    console.log(allDivs);
     if (allDivs.length != 0){
       Chatty.removeAllFromArray(allDivs);
       messageContainer.innerHTML = "";
