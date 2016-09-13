@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .darktheme {
   background-color: darkgrey;
   color: white;
@@ -12,3 +13,12 @@
 
 
 
+=======
+#disabled {
+	background-color: blue;
+}
+
+.largetheme {
+	font-size: 200%;
+}
+>>>>>>> 43378f4c0bd8c46204ae19effd9ec0dafd0c1573

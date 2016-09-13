@@ -1,7 +1,7 @@
 
 var userInput = document.getElementById("user-input");
 var messageContainer = document.getElementById("entered-messages");
-
+var clearMessages = document.getElementById("clear-messages");
 function printMessages (json) {
   var counter = 0;
   messageContainer.innerHTML = "";
@@ -20,7 +20,19 @@ document.querySelector("body").addEventListener("click", function(e) {
     var idToDelete = e.target.parentNode.id;
     Chatty.removeFromArray(idToDelete);
   }
-
+  if (e.target.id === "clear-messages") {
+    var allDivs = messageContainer.children;
+    console.log(messageContainer);
+    console.log(allDivs);
+    if (allDivs.length != 0){
+      Chatty.removeAllFromArray(allDivs);
+      messageContainer.innerHTML = "";
+    } else {
+      clearMessages.classList.add("disabled");
+      console.log("hi");
+    }  
+    
+  }
 
 
 });
@@ -38,6 +50,7 @@ userInput.addEventListener("keypress", function(e) {
 
 Chatty.loadFixedMessages();
 
+<<<<<<< HEAD
 
 var darkThemeChecked = document.getElementById("dark-theme");
   function makeDarkTheme(){
@@ -55,3 +68,16 @@ var users = {
 
 
 
+=======
+var largethemeChecked = document.getElementById("large-text"); 
+function checkboxLarge() {
+  if (largethemeChecked.checked === true) {
+    document.querySelector("body").classList.add("largetheme");
+    document.querySelector("input").classList.add("largetheme");  
+  }
+  else {
+    document.querySelector("body").classList.remove("largetheme");
+    document.querySelector("input").classList.remove("largetheme");
+  }
+};
+>>>>>>> 43378f4c0bd8c46204ae19effd9ec0dafd0c1573

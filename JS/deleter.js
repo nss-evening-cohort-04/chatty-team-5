@@ -6,6 +6,13 @@ deleteMessages.removeFromDOM = function(DOMId) {
 };
 deleteMessages.removeFromArray = function(DivId){
 	Chatty.eraseMessages(DivId);
+};
+deleteMessages.removeAllFromArray = function(DOMArray) {
+  for (var i = 0; i < DOMArray.length; i++) {
+  	var eachDiv = DOMArray[i];
+  	var eachDivId = eachDiv[i];
+  	Chatty.eraseMessages(eachDivId);
+  }
 }
 return deleteMessages
 
