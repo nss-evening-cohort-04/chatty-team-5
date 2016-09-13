@@ -20,6 +20,9 @@ var Chatty = (function () {
     },
     eraseMessages: function(msgId) {
       fixedMessages.splice(msgId, 1);
+    },
+    editMessages: function(msgId, newMessage) {
+      console.log(msgId,": needs to have a new message of ",newMessage);
     }
 
 }

@@ -2,11 +2,13 @@
 var userInput = document.getElementById("user-input");
 var messageContainer = document.getElementById("entered-messages");
 var clearMessages = document.getElementById("clear-messages");
+var messages = document.getElementsByClassName("messages");
+var editing = false;
 function printMessages (json) {
   var counter = 0;
   messageContainer.innerHTML = "";
   for (var i = 0; i < json.length; i++) {
-    messageContainer.innerHTML += "<div id=" + counter + ">" + json[i].value + " " + "<button id=delete-button>Delete</button></div>";
+    messageContainer.innerHTML += "<div id=" + counter + " class=messages>" + json[i].value + " " + "<button id=edit-button>Edit</button><button id=delete-button>Delete</button></div>";
     counter++;
 
   }
@@ -31,6 +33,24 @@ document.querySelector("body").addEventListener("click", function(e) {
       clearMessages.classList.add("disabled");
       console.log("hi");
     }
+  }
+     if (e.target.id === "edit-button") {
+      editing = true;
+      // console.log(messageContainer.children);
+      var messageToEditId = e.target.parentElement.id;
+      userInput.value = document.getElementById(messageToEditId).firstChild.data
+      userInput.focus();
+      userInput.addEventListener("keypress",function(e){
+          if (e.keyCode !== 13) {
+        document.getElementById(messageToEditId).firstChild.data = userInput.value;
+      } else if (e.keyCode == 13) {
+        Chatty.editMessages(messageToEditId, userInput.value);
+        editing = false;
+        userInput.value = "";
+        messageToEditId = "";
+      }
+    })
+      // document.getElementById(messageToEdit).firstChild.data = userInput.value;
 
   }
 
@@ -39,7 +59,7 @@ document.querySelector("body").addEventListener("click", function(e) {
 
 
 userInput.addEventListener("keypress", function(e) {
-  if (e.keyCode == 13) {
+  if (e.keyCode == 13 && !editing) {
     var newMessage = userInput.value;
     Chatty.appendNewMessage(newMessage);
     userInput.value = "";
