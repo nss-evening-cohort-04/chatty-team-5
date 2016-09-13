@@ -1,24 +1,38 @@
+
+#disabled {
+  background-color: blue;
+}
+
+.largetheme {
+    font-size: 200%;
+}
+
+.darktheme {
+  background-color: darkgrey;
+  color: white;
+}
+
 .radio-theme {
-	display: inline-block;
-	list-style-type: none;
+  display: inline-block;
+  list-style-type: none;
 }
 
 .blue-green {
-	background-color: blue;
-	color: green;
+  background-color: blue;
+  color: green;
 }
 
 .red-pink {
-	background-color: red;
-	color: pink;
+  background-color: red;
+  color: pink;
 }
 
 .green-yellow {
-	background-color: green;
-	color: yellow;
+  background-color: green;
+  color: yellow;
 }
 
 .yellow-blue {
-	background-color: yellow;
-	color: blue;
+  background-color: yellow;
+  color: blue;
 }
