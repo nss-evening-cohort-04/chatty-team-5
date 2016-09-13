@@ -48,3 +48,15 @@ userInput.addEventListener("keypress", function(e) {
 
 
 Chatty.loadFixedMessages();
+
+var largethemeChecked = document.getElementById("large-text"); 
+function checkboxLarge() {
+  if (largethemeChecked.checked === true) {
+    document.querySelector("body").classList.add("largetheme");
+    document.querySelector("input").classList.add("largetheme");  
+  }
+  else {
+    document.querySelector("body").classList.remove("largetheme");
+    document.querySelector("input").classList.remove("largetheme");
+  }
+};
