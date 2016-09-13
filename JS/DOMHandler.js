@@ -47,7 +47,6 @@ userInput.addEventListener("keypress", function(e) {
 
 });
 
-
 Chatty.loadFixedMessages();
 
 
@@ -74,3 +73,37 @@ function checkboxLarge() {
   }
 };
 
+//Change Theme Modal
+var greenYellow = document.getElementById("greenYellow");
+var yellowBlue = document.getElementById("yellowBlue");
+var blueGreen = document.getElementById("blueGreen");
+var redPink = document.getElementById("redPink");
+var themeSubmit = document.getElementById("themeSubmit");
+
+themeSubmit.addEventListener('click', function(){
+  if (redPink.checked === true){ 
+    document.querySelector("body").classList.add("red-pink");
+    document.querySelector("body").classList.remove("green-yellow");
+    document.querySelector("body").classList.remove("yellow-blue");
+    document.querySelector("body").classList.remove("blue-green");
+  }
+  if (blueGreen.checked === true) {
+    document.querySelector("body").classList.add("blue-green");
+    document.querySelector("body").classList.remove("green-yellow");
+    document.querySelector("body").classList.remove("yellow-blue");
+    document.querySelector("body").classList.remove("red-pink");
+  }
+  if (yellowBlue.checked === true) {
+    document.querySelector("body").classList.add("yellow-blue");
+    document.querySelector("body").classList.remove("green-yellow");
+    document.querySelector("body").classList.remove("blue-green");
+    document.querySelector("body").classList.remove("red-pink");
+  }
+  if (greenYellow.checked === true) {
+    document.querySelector("body").classList.add("green-yellow");
+    document.querySelector("body").classList.remove("yellow-blue");
+    document.querySelector("body").classList.remove("blue-green");
+    document.querySelector("body").classList.remove("red-pink");
+  }
+
+});
