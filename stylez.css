@@ -1,24 +1,19 @@
-<<<<<<< HEAD
+#disabled {
+  background-color: blue;
+}
+
+.largetheme {
+    font-size: 200%;
+}
+
 .darktheme {
   background-color: darkgrey;
   color: white;
 }
 
-.largetheme {
-    font-size: 150%;
-}
 
 
 
 
 
 
-=======
-#disabled {
-	background-color: blue;
-}
-
-.largetheme {
-	font-size: 200%;
-}
->>>>>>> 43378f4c0bd8c46204ae19effd9ec0dafd0c1573

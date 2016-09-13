@@ -30,8 +30,8 @@ document.querySelector("body").addEventListener("click", function(e) {
     } else {
       clearMessages.classList.add("disabled");
       console.log("hi");
-    }  
-    
+    }
+
   }
 
 
@@ -50,7 +50,6 @@ userInput.addEventListener("keypress", function(e) {
 
 Chatty.loadFixedMessages();
 
-<<<<<<< HEAD
 
 var darkThemeChecked = document.getElementById("dark-theme");
   function makeDarkTheme(){
@@ -62,22 +61,16 @@ var darkThemeChecked = document.getElementById("dark-theme");
   }
 }
 
-var users = {
-  names: ["Xavier", "Joanna", "Mackenzie", "Gunter", "Iveta", "Sven"];
-};
 
-
-
-=======
-var largethemeChecked = document.getElementById("large-text"); 
+var largethemeChecked = document.getElementById("large-text");
 function checkboxLarge() {
   if (largethemeChecked.checked === true) {
     document.querySelector("body").classList.add("largetheme");
-    document.querySelector("input").classList.add("largetheme");  
+    document.querySelector("input").classList.add("largetheme");
   }
   else {
     document.querySelector("body").classList.remove("largetheme");
     document.querySelector("input").classList.remove("largetheme");
   }
 };
->>>>>>> 43378f4c0bd8c46204ae19effd9ec0dafd0c1573
+
