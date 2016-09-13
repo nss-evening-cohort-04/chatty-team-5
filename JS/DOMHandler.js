@@ -1,3 +1,4 @@
+
 var userInput = document.getElementById("user-input");
 var messageContainer = document.getElementById("entered-messages");
 var clearMessages = document.getElementById("clear-messages");
@@ -7,7 +8,7 @@ function printMessages (json) {
   for (var i = 0; i < json.length; i++) {
     messageContainer.innerHTML += "<div id=" + counter + ">" + json[i].value + " " + "<button id=delete-button>Delete</button></div>";
     counter++;
-    
+
   }
 
 }
@@ -29,8 +30,8 @@ document.querySelector("body").addEventListener("click", function(e) {
     } else {
       clearMessages.classList.add("disabled");
       console.log("hi");
-    }  
-    
+    }
+
   }
 
 
@@ -49,14 +50,27 @@ userInput.addEventListener("keypress", function(e) {
 
 Chatty.loadFixedMessages();
 
-var largethemeChecked = document.getElementById("large-text"); 
+
+var darkThemeChecked = document.getElementById("dark-theme");
+  function makeDarkTheme(){
+    if (darkThemeChecked.checked === true){
+    document.querySelector("body").classList.add("darktheme");
+}
+    else {
+    document.querySelector("body").classList.remove("darktheme");
+  }
+}
+
+
+var largethemeChecked = document.getElementById("large-text");
 function checkboxLarge() {
   if (largethemeChecked.checked === true) {
     document.querySelector("body").classList.add("largetheme");
-    document.querySelector("input").classList.add("largetheme");  
+    document.querySelector("input").classList.add("largetheme");
   }
   else {
     document.querySelector("body").classList.remove("largetheme");
     document.querySelector("input").classList.remove("largetheme");
   }
 };
+
