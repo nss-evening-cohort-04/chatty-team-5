@@ -37,7 +37,7 @@ userInput.addEventListener("keypress", function(e) {
 Chatty.loadFixedMessages();
 
 
-
+//Change Theme Modal
 var greenYellow = document.getElementById("greenYellow");
 var yellowBlue = document.getElementById("yellowBlue");
 var blueGreen = document.getElementById("blueGreen");
@@ -57,4 +57,6 @@ themeSubmit.addEventListener('click', function(){
   if (greenYellow.checked === true) {
     document.querySelector("body").classList.add("green-yellow");
   }
+
 });
+
