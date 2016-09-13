@@ -1,6 +1,6 @@
 var userInput = document.getElementById("user-input");
 var messageContainer = document.getElementById("entered-messages");
-
+var clearMessages = document.getElementById("clear-messages");
 function printMessages (json) {
   var counter = 0;
   messageContainer.innerHTML = "";
@@ -19,7 +19,19 @@ document.querySelector("body").addEventListener("click", function(e) {
     var idToDelete = e.target.parentNode.id;
     Chatty.removeFromArray(idToDelete);
   }
-
+  if (e.target.id === "clear-messages") {
+    var allDivs = messageContainer.children;
+    console.log(messageContainer);
+    console.log(allDivs);
+    if (allDivs.length != 0){
+      Chatty.removeAllFromArray(allDivs);
+      messageContainer.innerHTML = "";
+    } else {
+      clearMessages.classList.add("disabled");
+      console.log("hi");
+    }  
+    
+  }
 
 
 });
