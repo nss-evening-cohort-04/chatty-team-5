@@ -34,5 +34,30 @@ userInput.addEventListener("keypress", function(e) {
 
 });
 
+//Change Theme Modal
+var greenYellow = document.getElementById("greenYellow");
+var yellowBlue = document.getElementById("yellowBlue");
+var blueGreen = document.getElementById("blueGreen");
+var redPink = document.getElementById("redPink");
+var themeSubmit = document.getElementById("themeSubmit");
+
+themeSubmit.addEventListener('click', function(){
+  if (redPink.checked === true){ 
+    document.querySelector("body").classList.add("red-pink");
+  }
+  if (blueGreen.checked === true) {
+    document.querySelector("body").classList.add("blue-green");
+  }
+  if (yellowBlue.checked === true) {
+    document.querySelector("body").classList.add("yellow-blue");
+  }
+  if (greenYellow.checked === true) {
+    document.querySelector("body").classList.add("green-yellow");
+  }
+});
+
+   
+
+
 
 Chatty.loadFixedMessages();

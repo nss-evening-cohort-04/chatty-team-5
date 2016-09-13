@@ -1,0 +1,24 @@
+.radio-theme {
+	display: inline-block;
+	list-style-type: none;
+}
+
+.blue-green {
+	background-color: blue;
+	color: green;
+}
+
+.red-pink {
+	background-color: red;
+	color: pink;
+}
+
+.green-yellow {
+	background-color: green;
+	color: yellow;
+}
+
+.yellow-blue {
+	background-color: yellow;
+	color: blue;
+}

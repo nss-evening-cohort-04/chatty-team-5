@@ -2,6 +2,9 @@
 <html>
    <head>
       <title>Chatty Kathy</title>
+      <link rel="stylesheet" type="text/css" href="stylez.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      
    </head>
    <body>
       <input id="user-input" type="input" placeholder="Enter your message...">
@@ -11,6 +14,39 @@
          <input class="input" type="checkbox" name="chk_None_provided" id="large-text" value=""> Large Text
       </div>
       <div id="entered-messages"></div>
+      
+      <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Change Theme
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Pick a Theme</h4>
+      </div>
+      <div class="modal-body">
+        <ul class="radio-theme">
+         <li class="blue-green"><input id="blueGreen"  type="checkbox" name="" value="" placeholder="">Blue Background / Green Font </li>
+         <li class="red-pink"><input id="redPink" type="checkbox" name="" value="" placeholder="">Red Background / Pink Font </li>
+         <li class="green-yellow"><input id="greenYellow"  type="checkbox" name="" value="" placeholder="">Green Background / Yellow Font </li>
+         <li class="yellow-blue"><input id="yellowBlue" type="checkbox" name="" value="" placeholder="">Yellow Background / Blue Font </li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="themeSubmit" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
       <script type="text/javascript" src="JS/chatty.js"></script>
       <script type="text/javascript" src="JS/DOMHandler.js"></script>
       <script type="text/javascript" src="JS/deleter.js"></script>
