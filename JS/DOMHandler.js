@@ -49,4 +49,9 @@ var darkThemeChecked = document.getElementById("dark-theme");
   }
 }
 
+var users = {
+  names: ["Xavier", "Joanna", "Mackenzie", "Gunter", "Iveta", "Sven"];
+};
+
+
 
