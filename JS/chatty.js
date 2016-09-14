@@ -3,7 +3,7 @@ var Chatty = (function () {
 
   return {
     appendNewMessage: function(newMessage) {
-      fixedMessages.push({'value':newMessage});
+      fixedMessages.push({'chat':newMessage});
       printMessages(fixedMessages);
     },
     loadFixedMessages: function() {
@@ -20,6 +20,13 @@ var Chatty = (function () {
     },
     eraseMessages: function(msgId) {
       fixedMessages.splice(msgId, 1);
+    },
+    editMessages: function(msgId, newMsg) {
+      // console.log(fixedMessages[msgId]);
+
+      fixedMessages[msgId].chat = newMsg;
+      //fixedMessages.fill(newMsg, msgId, 1);
+      console.log(fixedMessages);
     }
 
 }
