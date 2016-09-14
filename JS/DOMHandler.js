@@ -2,7 +2,7 @@
 var userInput = document.getElementById("user-input");
 var messageContainer = document.getElementById("entered-messages");
 var clearMessages = document.getElementById("clear-messages");
-var time = moment().format('LT')
+var time = moment().format('LT');
 
 function printMessages (json) {
   var counter = 0;
