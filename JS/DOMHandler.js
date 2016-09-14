@@ -3,16 +3,18 @@ var userInput = document.getElementById("user-input");
 var editInput = document.getElementById("edit-input");
 var messageContainer = document.getElementById("entered-messages");
 var clearMessages = document.getElementById("clear-messages");
+var time = moment().format('LT');
 var messages = document.getElementsByClassName("messages");
 var notEditing = true;
 function printMessages (localArrayOfMessages) {
+
   var counter = 0;
   if (localArrayOfMessages.length >= 20) {
     localArrayOfMessages.shift();
   }
   messageContainer.innerHTML = "";
   for (var i = 0; i < localArrayOfMessages.length; i++) {
-    messageContainer.innerHTML += "<div id=" + counter + " class=messages><p>" + localArrayOfMessages[i].chat + " " + "</p><button id=edit-button>Edit</button><button id=delete-button>Delete</button></div>";
+    messageContainer.innerHTML += "<div id=" + counter + " class=messages><p>" + time + localArrayOfMessages[i].chat + " " + "</p><button id=edit-button>Edit</button><button id=delete-button>Delete</button></div>";
     counter++;
   }
 }
@@ -76,6 +78,10 @@ var darkThemeChecked = document.getElementById("dark-theme");
   function makeDarkTheme(){
     if (darkThemeChecked.checked === true){
     document.querySelector("body").classList.add("darktheme");
+    document.querySelector("body").classList.remove("green-yellow");
+    document.querySelector("body").classList.remove("yellow-blue");
+    document.querySelector("body").classList.remove("blue-green");
+    document.querySelector("body").classList.remove("red-pink");
 }
     else {
     document.querySelector("body").classList.remove("darktheme");
@@ -101,6 +107,14 @@ var yellowBlue = document.getElementById("yellowBlue");
 var blueGreen = document.getElementById("blueGreen");
 var redPink = document.getElementById("redPink");
 var themeSubmit = document.getElementById("themeSubmit");
+
+function selectOnlyThis(id){
+  var myCheckbox = document.getElementsByName("myCheckbox");
+  Array.prototype.forEach.call(myCheckbox,function(el){
+    el.checked = false;
+  });
+  id.checked = true;
+};
 
 themeSubmit.addEventListener('click', function(){
   if (redPink.checked === true){ 
@@ -129,3 +143,4 @@ themeSubmit.addEventListener('click', function(){
   }
 
 });
+

@@ -32,10 +32,10 @@
                     </div>
                     <div class="modal-body">
                         <ul class="radio-theme">
-                            <li class="blue-green"><input id="blueGreen"  type="checkbox" name="" value="" placeholder="">Blue Background / Green Font </li>
-                            <li class="red-pink"><input id="redPink" type="checkbox" name="" value="" placeholder="">Red Background / Pink Font </li>
-                            <li class="green-yellow"><input id="greenYellow"  type="checkbox" name="" value="" placeholder="">Green Background / Yellow Font </li>
-                            <li class="yellow-blue"><input id="yellowBlue" type="checkbox" name="" value="" placeholder="">Yellow Background / Blue Font </li>
+                            <li class="blue-green"><input id="blueGreen"  type="checkbox" name="myCheckbox" onclick="selectOnlyThis(this)">Blue Background / Green Font </li>
+                            <li class="red-pink"><input id="redPink" type="checkbox" name="myCheckbox" onclick="selectOnlyThis(this)">Red Background / Pink Font </li>
+                            <li class="green-yellow"><input id="greenYellow"  type="checkbox" name="myCheckbox" onclick="selectOnlyThis(this)">Green Background / Yellow Font </li>
+                            <li class="yellow-blue"><input id="yellowBlue" type="checkbox" name="myCheckbox" onclick="selectOnlyThis(this)">Yellow Background / Blue Font </li>
                         </ul>
                     </div>
                     <div class="modal-footer">
@@ -47,7 +47,8 @@
         </div>
         <div id="entered-messages" class="col-md-6 col-md-offset-2"></div>
 
-        
+
+        <script type="text/javascript" src="moment.js"></script>
         <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script type="text/javascript" src="JS/chatty.js"></script>
