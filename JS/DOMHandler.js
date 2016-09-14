@@ -2,11 +2,13 @@
 var userInput = document.getElementById("user-input");
 var messageContainer = document.getElementById("entered-messages");
 var clearMessages = document.getElementById("clear-messages");
+var time = moment().format('LT')
+
 function printMessages (json) {
   var counter = 0;
   messageContainer.innerHTML = "";
   for (var i = 0; i < json.length; i++) {
-    messageContainer.innerHTML += "<div id=" + counter + ">" + json[i].value + " " + "<button id=delete-button>Delete</button></div>";
+    messageContainer.innerHTML += "<div id=" + counter + ">" + time + " " + json[i].value + " " + "<button id=delete-button>Delete</button></div>";
     counter++;
   }
 
@@ -53,6 +55,10 @@ var darkThemeChecked = document.getElementById("dark-theme");
   function makeDarkTheme(){
     if (darkThemeChecked.checked === true){
     document.querySelector("body").classList.add("darktheme");
+    document.querySelector("body").classList.remove("green-yellow");
+    document.querySelector("body").classList.remove("yellow-blue");
+    document.querySelector("body").classList.remove("blue-green");
+    document.querySelector("body").classList.remove("red-pink");
 }
     else {
     document.querySelector("body").classList.remove("darktheme");
@@ -78,6 +84,14 @@ var yellowBlue = document.getElementById("yellowBlue");
 var blueGreen = document.getElementById("blueGreen");
 var redPink = document.getElementById("redPink");
 var themeSubmit = document.getElementById("themeSubmit");
+
+function selectOnlyThis(id){
+  var myCheckbox = document.getElementsByName("myCheckbox");
+  Array.prototype.forEach.call(myCheckbox,function(el){
+    el.checked = false;
+  });
+  id.checked = true;
+};
 
 themeSubmit.addEventListener('click', function(){
   if (redPink.checked === true){ 
@@ -106,3 +120,4 @@ themeSubmit.addEventListener('click', function(){
   }
 
 });
+
