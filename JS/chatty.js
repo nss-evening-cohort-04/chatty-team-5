@@ -3,8 +3,10 @@ var Chatty = (function () {
 
   return {
     appendNewMessage: function(newMessage) {
+      console.log("newmessages", fixedMessages);
       fixedMessages.push({'chat':newMessage});
       printMessages(fixedMessages);
+      
     },
     loadFixedMessages: function() {
     var messageLoader = new XMLHttpRequest();
@@ -19,18 +21,24 @@ var Chatty = (function () {
 
     },
     eraseMessages: function(msgId) {
-      fixedMessages.splice(msgId, 1);
+        // if (msgId === undefined) {
+        //   fixedMessages = [];
+        //   console.log("empty", fixedMessages);
+        // } else {
+          var index = fixedMessages.indexOf(msgId);
+          fixedMessages.splice(index, 1);
+          console.log("deleter", fixedMessages); 
+        // }  
+    },
+    eraseAllMessages: function(eraseArray) {
+      fixedMessages = [];
     },
     editMessages: function(msgId, newMsg) {
-      // console.log(fixedMessages[msgId]);
-
       fixedMessages[msgId].chat = newMsg;
       //fixedMessages.fill(newMsg, msgId, 1);
-      console.log(fixedMessages);
+      //console.log(fixedMessages);
     }
 
 }
-
-
 
 })();
