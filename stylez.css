@@ -1,10 +1,31 @@
+body { 
+	padding-top: 10em; 
+}
+.navbar-brand {
+  padding: 0;
+}
+.navbar-form {
+  padding-top: 1em;
+}
+.navbar-header h1 {
+  font-size: 4em;
+}
+.form-control {
+  display: inline;
+  margin-top: 1.5em;
+  margin-left: 2em;
+  width: 50%;
+}
+.messages{
+  display: inline-block;
+  border: 1px solid grey;
+  padding: 1em;
+  width: 100%;
+  margin: 1em;
+}
 .hidden {
 	display: none;
 }
-#disabled {
-  background-color: blue;
-}
-
 .largetheme {
     font-size: 200%;
 }

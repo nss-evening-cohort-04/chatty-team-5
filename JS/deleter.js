@@ -8,7 +8,7 @@ deleteMessages.removeFromArray = function(DivId){
 	Chatty.eraseMessages(DivId);
 };
 deleteMessages.removeAllFromArray = function(DOMArray) {
-  	DOMArray = [];
+  	Chatty.eraseAllMessages(DOMArray);
 }
 return deleteMessages
 

@@ -6,18 +6,22 @@
         <link rel="stylesheet" type="text/css" href="stylez.css">
     </head>
     <body>
-        <legend>Chatty</legend>
-        <div class="col-md-6 col-md-offset-2">
-            <input class="form-control input-sm" id="user-input" type="input" placeholder="Enter your message...">
-            <input class="form-control input-sm hidden" id="edit-input" type="input" placeholder="">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+         <div class="navbar-header">
+            <h1 class="navbar-brand m-b-0">Chatty</h1>
         </div>
-        <div class="col-md-6 col-md-offset-2">
-            <button id="clear-messages" type="submit" class="btn-primary">Clear Messages</button>
-        </div>
-        <div id="theme-settings" class="col-md-6 col-md-offset-2">
-            <input class="input" type="checkbox" name="chk_None_provided" id="dark-theme" value="" onclick="makeDarkTheme()"> Dark Theme
-            <input class="input" type="checkbox" name="chk_None_provided" id="large-text" value="" onclick="checkboxLarge()"> Large Text
-        </div>
+            <div class="form-group" style="display:inline;">
+                <input class="form-control input-md" id="user-input" type="input" placeholder="Enter your message...">
+                <input class="form-control input-md hidden" id="edit-input" type="input" placeholder="">
+                    <button id="clear-messages" type="submit" class="btn-primary">Clear Messages</button>
+                <div id="theme-settings" style="display:inline;">
+                    <input class="input" type="checkbox" name="chk_None_provided" id="dark-theme" value="" onclick="makeDarkTheme()"> Dark Theme
+                    <input class="input" type="checkbox" name="chk_None_provided" id="large-text" value="" onclick="checkboxLarge()"> Large Text
+                </div>
+            </div>
+      </div>
+   </nav>
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
         Change Theme
