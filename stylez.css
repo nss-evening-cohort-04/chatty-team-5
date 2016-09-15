@@ -23,6 +23,9 @@ body {
   width: 100%;
   margin: 1em;
 }
+.messages p:first-child {
+  font-size: 2em;
+}
 .hidden {
 	display: none;
 }
