@@ -16,13 +16,16 @@ body {
   margin-left: 2em;
   width: 50%;
 }
+.messages{
+  display: inline-block;
+  border: 1px solid grey;
+  padding: 1em;
+  width: 100%;
+  margin: 1em;
+}
 .hidden {
 	display: none;
 }
-#disabled {
-  background-color: blue;
-}
-
 .largetheme {
     font-size: 200%;
 }

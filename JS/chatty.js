@@ -37,6 +37,9 @@ var Chatty = (function () {
       fixedMessages[msgId].chat = newMsg;
       //fixedMessages.fill(newMsg, msgId, 1);
       //console.log(fixedMessages);
+    },
+    getMessages: function() {
+      return fixedMessages;
     }
 
 }
