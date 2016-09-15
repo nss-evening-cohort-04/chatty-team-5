@@ -6,14 +6,14 @@ var clearMessages = document.getElementById("clear-messages");
 var current_time = new moment().format("LT");
 var messages = document.getElementsByClassName("messages");
 function printMessages (localArrayOfMessages) {
-  
+
   var counter = 0;
   if (localArrayOfMessages.length >= 20) {
     localArrayOfMessages.shift();
   }
   messageContainer.innerHTML = "";
   for (var i = 0; i < localArrayOfMessages.length; i++) {
-    
+
     messageContainer.innerHTML += "<div id=" + counter + " class=messages><p>"+localArrayOfMessages[i].chat + "</p><p>" + current_time + "</p><button id=edit-button>Edit</button><button id=delete-button>Delete</button></div>";
     counter++;
   }
@@ -23,7 +23,7 @@ document.querySelector("body").addEventListener("click", function(e) {
     var elementToDelete = e.target.parentNode;
     Chatty.removeFromDOM(elementToDelete);
     var idToDelete = e.target.parentNode.id;
-    
+
     Chatty.removeFromArray(idToDelete);
   }
   if (e.target.id === "clear-messages") {
@@ -106,42 +106,12 @@ var backgroundColor = document.getElementById("backgroundColor");
 var fontColor = document.getElementById("fontColor");
 var themeSubmit = document.getElementById("themeSubmit");
 
-// function selectOnlyThis(id){
-//   console.log(id.value);
-//   // var myCheckbox = document.getElementsByName("myCheckbox");
-//   // Array.prototype.forEach.call(myCheckbox,function(el){
-//   //   el.checked = false;
-//   // });
-//   // id.checked = true;
-// };
-
 themeSubmit.addEventListener('click', function(){
-  console.log(backgroundColor.value);
-  console.log(fontColor.value);
-  // if (redPink.checked === true){ 
-  //   document.querySelector("body").classList.add("red-pink");
-  //   document.querySelector("body").classList.remove("green-yellow");
-  //   document.querySelector("body").classList.remove("yellow-blue");
-  //   document.querySelector("body").classList.remove("blue-green");
-  // }
-  // if (blueGreen.checked === true) {
-  //   document.querySelector("body").classList.add("blue-green");
-  //   document.querySelector("body").classList.remove("green-yellow");
-  //   document.querySelector("body").classList.remove("yellow-blue");
-  //   document.querySelector("body").classList.remove("red-pink");
-  // }
-  // if (yellowBlue.checked === true) {
-  //   document.querySelector("body").classList.add("yellow-blue");
-  //   document.querySelector("body").classList.remove("green-yellow");
-  //   document.querySelector("body").classList.remove("blue-green");
-  //   document.querySelector("body").classList.remove("red-pink");
-  // }
-  // if (greenYellow.checked === true) {
-  //   document.querySelector("body").classList.add("green-yellow");
-  //   document.querySelector("body").classList.remove("yellow-blue");
-  //   document.querySelector("body").classList.remove("blue-green");
-  //   document.querySelector("body").classList.remove("red-pink");
-  // }
+  var first = backgroundColor.value;
+  var second = fontColor.value;
+  document.querySelector("body").style.backgroundColor = "";
+  document.querySelector("body").style.backgroundColor = first;
+  document.querySelector("body").style.color = second;
 
 });
 

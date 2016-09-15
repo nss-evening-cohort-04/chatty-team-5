@@ -1,5 +1,5 @@
-body { 
-	padding-top: 10em; 
+body {
+	padding-top: 10em;
 }
 .navbar-brand {
   padding: 0;
@@ -14,7 +14,7 @@ body {
   display: inline;
   margin-top: 1.5em;
   margin-left: 2em;
-  width: 50%;
+  width: 18%;
 }
 .messages{
   display: inline-block;
