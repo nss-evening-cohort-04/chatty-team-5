@@ -77,11 +77,9 @@ Chatty.loadFixedMessages();
 var darkThemeChecked = document.getElementById("dark-theme");
   function makeDarkTheme(){
     if (darkThemeChecked.checked === true){
-    document.querySelector("body").classList.add("darktheme");
-    document.querySelector("body").classList.remove("green-yellow");
-    document.querySelector("body").classList.remove("yellow-blue");
-    document.querySelector("body").classList.remove("blue-green");
-    document.querySelector("body").classList.remove("red-pink");
+      document.querySelector("body").style.backgroundColor = "";
+      document.querySelector("body").style.color = "";
+      document.querySelector("body").classList.add("darktheme");
 }
     else {
     document.querySelector("body").classList.remove("darktheme");
