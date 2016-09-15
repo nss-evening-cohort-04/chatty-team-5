@@ -6,14 +6,14 @@ var clearMessages = document.getElementById("clear-messages");
 var current_time = new moment().format("LT");
 var messages = document.getElementsByClassName("messages");
 function printMessages (localArrayOfMessages) {
-  
+
   var counter = 0;
   if (localArrayOfMessages.length >= 20) {
     localArrayOfMessages.shift();
   }
   messageContainer.innerHTML = "";
   for (var i = 0; i < localArrayOfMessages.length; i++) {
-    
+
     messageContainer.innerHTML += "<div id=" + counter + " class=messages><p>"+localArrayOfMessages[i].chat + "</p><p>" + current_time + "</p><button id=edit-button>Edit</button><button id=delete-button>Delete</button></div>";
     counter++;
   }
@@ -23,7 +23,7 @@ document.querySelector("body").addEventListener("click", function(e) {
     var elementToDelete = e.target.parentNode;
     Chatty.removeFromDOM(elementToDelete);
     var idToDelete = e.target.parentNode.id;
-    
+
     Chatty.removeFromArray(idToDelete);
   }
   if (e.target.id === "clear-messages") {
@@ -118,7 +118,7 @@ function selectOnlyThis(id){
 };
 
 themeSubmit.addEventListener('click', function(){
-  if (redPink.checked === true){ 
+  if (redPink.checked === true){
     document.querySelector("body").classList.add("red-pink");
     document.querySelector("body").classList.remove("green-yellow");
     document.querySelector("body").classList.remove("yellow-blue");
