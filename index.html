@@ -15,6 +15,9 @@
                 <input class="form-control input-md" id="user-input" type="input" placeholder="Enter your message...">
                 <input class="form-control input-md hidden" id="edit-input" type="input" placeholder="">
                     <button id="clear-messages" type="submit" class="btn-primary">Clear Messages</button>
+                    <button type="button" class="btn-primary" data-toggle="modal" data-target="#myModal">
+        Change Theme
+        </button>
                 <div id="theme-settings" style="display:inline;">
                     <input class="input" type="checkbox" name="chk_None_provided" id="dark-theme" value="" onclick="makeDarkTheme()"> Dark Theme
                     <input class="input" type="checkbox" name="chk_None_provided" id="large-text" value="" onclick="checkboxLarge()"> Large Text
@@ -22,10 +25,6 @@
             </div>
       </div>
    </nav>
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-        Change Theme
-        </button>
         <!-- Modal -->
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
