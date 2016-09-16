@@ -31,8 +31,7 @@ document.querySelector("body").addEventListener("click", function(e) {
     if (allDivs.length != 0){
       Chatty.removeAllFromArray(allDivs);
       messageContainer.innerHTML = "";
-    } else {
-      clearMessages.classList.add("disabled");
+      clearMessages.setAttribute("disabled", true);
     }
   }
   if (e.target.id === "edit-button") {
@@ -78,11 +77,9 @@ Chatty.loadFixedMessages();
 var darkThemeChecked = document.getElementById("dark-theme");
   function makeDarkTheme(){
     if (darkThemeChecked.checked === true){
-    document.querySelector("body").classList.add("darktheme");
-    document.querySelector("body").classList.remove("green-yellow");
-    document.querySelector("body").classList.remove("yellow-blue");
-    document.querySelector("body").classList.remove("blue-green");
-    document.querySelector("body").classList.remove("red-pink");
+      document.querySelector("body").style.backgroundColor = "";
+      document.querySelector("body").style.color = "";
+      document.querySelector("body").classList.add("darktheme");
 }
     else {
     document.querySelector("body").classList.remove("darktheme");
@@ -103,45 +100,16 @@ function checkboxLarge() {
 };
 
 //Change Theme Modal
-var greenYellow = document.getElementById("greenYellow");
-var yellowBlue = document.getElementById("yellowBlue");
-var blueGreen = document.getElementById("blueGreen");
-var redPink = document.getElementById("redPink");
+var backgroundColor = document.getElementById("backgroundColor");
+var fontColor = document.getElementById("fontColor");
 var themeSubmit = document.getElementById("themeSubmit");
 
-function selectOnlyThis(id){
-  var myCheckbox = document.getElementsByName("myCheckbox");
-  Array.prototype.forEach.call(myCheckbox,function(el){
-    el.checked = false;
-  });
-  id.checked = true;
-};
-
 themeSubmit.addEventListener('click', function(){
-  if (redPink.checked === true){
-    document.querySelector("body").classList.add("red-pink");
-    document.querySelector("body").classList.remove("green-yellow");
-    document.querySelector("body").classList.remove("yellow-blue");
-    document.querySelector("body").classList.remove("blue-green");
-  }
-  if (blueGreen.checked === true) {
-    document.querySelector("body").classList.add("blue-green");
-    document.querySelector("body").classList.remove("green-yellow");
-    document.querySelector("body").classList.remove("yellow-blue");
-    document.querySelector("body").classList.remove("red-pink");
-  }
-  if (yellowBlue.checked === true) {
-    document.querySelector("body").classList.add("yellow-blue");
-    document.querySelector("body").classList.remove("green-yellow");
-    document.querySelector("body").classList.remove("blue-green");
-    document.querySelector("body").classList.remove("red-pink");
-  }
-  if (greenYellow.checked === true) {
-    document.querySelector("body").classList.add("green-yellow");
-    document.querySelector("body").classList.remove("yellow-blue");
-    document.querySelector("body").classList.remove("blue-green");
-    document.querySelector("body").classList.remove("red-pink");
-  }
+  var first = backgroundColor.value;
+  var second = fontColor.value;
+  document.querySelector("body").style.backgroundColor = "";
+  document.querySelector("body").style.backgroundColor = first;
+  document.querySelector("body").style.color = second;
 
 });
 
