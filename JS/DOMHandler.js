@@ -3,9 +3,9 @@ var userInput = document.getElementById("user-input");
 var editInput = document.getElementById("edit-input");
 var messageContainer = document.getElementById("entered-messages");
 var clearMessages = document.getElementById("clear-messages");
-var current_time = new moment().format("LT");
 var messages = document.getElementsByClassName("messages");
 var userDiv = document.getElementById("choose-user").children;
+var current_time = new moment().format("LT");
 var user = "";
 //Parse array and print message to DOM
 function printMessages (localArrayOfMessages) {
@@ -14,7 +14,7 @@ function printMessages (localArrayOfMessages) {
     localArrayOfMessages.shift();
   }
   messageContainer.innerHTML = "";
-  for (var i = 0; i < localArrayOfMessages.length; i++) {
+  for (var i = localArrayOfMessages.length-1; i>=0; i--) {
 
     messageContainer.innerHTML += "<div id=" + counter + " class=messages><p>"+localArrayOfMessages[i].chat + "</p><p>" + current_time + "</p><p>" + localArrayOfMessages[i].user + "</p><button id=edit-button class=btn btn-default>Edit</button><button id=delete-button class=btn btn-default>Delete</button></div>";
     counter++;
