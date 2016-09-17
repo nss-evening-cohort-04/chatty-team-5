@@ -6,6 +6,7 @@
         <link rel="stylesheet" type="text/css" href="stylez.css">
     </head>
     <body>
+<!-- Styling for Navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
          <div class="navbar-header">
@@ -14,13 +15,20 @@
             <div class="form-group" style="display:inline;">
                 <input class="form-control input-md" id="user-input" type="input" placeholder="Enter your message...">
                 <input class="form-control input-md hidden" id="edit-input" type="input" placeholder="">
-                    <button id="clear-messages" type="submit" class="btn-primary">Clear Messages</button>
-                    <button type="button" class="btn-primary" data-toggle="modal" data-target="#myModal">
-        Change Theme
-        </button>
+                    <button id="clear-messages" type="button" class="btn btn-primary">Clear Messages</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                    Change Theme
+                    </button>
                 <div id="theme-settings" style="display:inline;">
                     <input class="input" type="checkbox" name="chk_None_provided" id="dark-theme" value="" onclick="makeDarkTheme()"> Dark Theme
                     <input class="input" type="checkbox" name="chk_None_provided" id="large-text" value="" onclick="checkboxLarge()"> Large Text
+                </div>
+                <div id="choose-user" style="display:inline;">
+                    <input type="radio" name="users" value="Dani" placeholder="">Dani
+                    <input type="radio" name="users" value="Mike" placeholder="">Mike
+                    <input type="radio" name="users" value="Stephen" placeholder="">Stephen
+                    <input type="radio" name="users" value="Taylor" placeholder="">Taylor
+                    <input type="radio" name="users" value="Zoe" placeholder="">Zoe
                 </div>
             </div>
       </div>
@@ -46,6 +54,7 @@
                 </div>
             </div>
         </div>
+<!-- Div for messages -->
         <div id="entered-messages" class="col-md-6 col-md-offset-2"></div>
 
 
