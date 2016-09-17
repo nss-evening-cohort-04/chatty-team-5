@@ -16,6 +16,9 @@ body {
   margin-left: 2em;
   width: 18%;
 }
+#choose-user {
+  padding-left: 2em;
+}
 .messages{
   display: inline-block;
   border: 1px solid grey;
@@ -32,33 +35,15 @@ body {
 .largetheme {
     font-size: 200%;
 }
-
 .darktheme {
   background-color: darkgrey;
   color: white;
 }
-
 .radio-theme {
   display: inline-block;
   list-style-type: none;
 }
-
-.blue-green {
-  background-color: blue;
-  color: green;
+#edit-button {
+  margin: 1em;
 }
 
-.red-pink {
-  background-color: red;
-  color: pink;
-}
-
-.green-yellow {
-  background-color: green;
-  color: yellow;
-}
-
-.yellow-blue {
-  background-color: yellow;
-  color: blue;
-}

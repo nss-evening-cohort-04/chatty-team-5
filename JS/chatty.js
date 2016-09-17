@@ -1,47 +1,42 @@
 var Chatty = (function () {
   var fixedMessages = [];
-
+  
   return {
-    appendNewMessage: function(newMessage) {
+    appendNewMessage: function(newMessage, userId) {
       console.log("newmessages", fixedMessages);
-      fixedMessages.push({'chat':newMessage});
-      printMessages(fixedMessages);
-      
+      fixedMessages.push({'chat':newMessage, 'user':userId});
+      printMessages(fixedMessages);     
     },
     loadFixedMessages: function() {
-    var messageLoader = new XMLHttpRequest();
-    messageLoader.addEventListener("load", function() {
-    fixedMessages = JSON.parse(this.responseText);
-    fixedMessages = fixedMessages.messages;
-    printMessages(fixedMessages);
-
-    });
-    messageLoader.open("GET", "storedMessages.JSON");
-    messageLoader.send();
-
+    var myFiles = [ "json/msg-one.json", "json/msg-two.json", "json/msg-three.json", "json/msg-four.json", "json/msg-five.json" ];
+      for (var i = 0; i < myFiles.length; i++) {
+        var messageLoader = new XMLHttpRequest();
+        messageLoader.addEventListener("load", function() {
+          var data = JSON.parse(this.responseText);
+          for (var j = 0; j < data.messages.length; j++) {
+            fixedMessages.push(data.messages[j]);
+            printMessages(fixedMessages);
+          } 
+        });
+        messageLoader.open("GET", myFiles[i]);
+        messageLoader.send();
+      }
     },
     eraseMessages: function(msgId) {
-        // if (msgId === undefined) {
-        //   fixedMessages = [];
-        //   console.log("empty", fixedMessages);
-        // } else {
           var index = fixedMessages.indexOf(msgId);
           fixedMessages.splice(index, 1);
-          console.log("deleter", fixedMessages); 
-        // }  
+          console.log("deleter", fixedMessages);  
     },
     eraseAllMessages: function(eraseArray) {
       fixedMessages = [];
     },
-    editMessages: function(msgId, newMsg) {
+    editMessages: function(msgId, newMsg, newUser) {
       fixedMessages[msgId].chat = newMsg;
-      //fixedMessages.fill(newMsg, msgId, 1);
-      //console.log(fixedMessages);
+      fixedMessages[msgId].user = newUser;
+      console.log(newUser);
     },
     getMessages: function() {
       return fixedMessages;
     }
-
 }
-
 })();

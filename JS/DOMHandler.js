@@ -1,12 +1,14 @@
-
+//Get DOM Elements
 var userInput = document.getElementById("user-input");
 var editInput = document.getElementById("edit-input");
 var messageContainer = document.getElementById("entered-messages");
 var clearMessages = document.getElementById("clear-messages");
 var current_time = new moment().format("LT");
 var messages = document.getElementsByClassName("messages");
+var userDiv = document.getElementById("choose-user").children;
+var user = "";
+//Parse array and print message to DOM
 function printMessages (localArrayOfMessages) {
-
   var counter = 0;
   if (localArrayOfMessages.length >= 20) {
     localArrayOfMessages.shift();
@@ -14,10 +16,11 @@ function printMessages (localArrayOfMessages) {
   messageContainer.innerHTML = "";
   for (var i = 0; i < localArrayOfMessages.length; i++) {
 
-    messageContainer.innerHTML += "<div id=" + counter + " class=messages><p>"+localArrayOfMessages[i].chat + "</p><p>" + current_time + "</p><button id=edit-button>Edit</button><button id=delete-button>Delete</button></div>";
+    messageContainer.innerHTML += "<div id=" + counter + " class=messages><p>"+localArrayOfMessages[i].chat + "</p><p>" + current_time + "</p><p>" + localArrayOfMessages[i].user + "</p><button id=edit-button class=btn btn-default>Edit</button><button id=delete-button class=btn btn-default>Delete</button></div>";
     counter++;
   }
 }
+//Event Listener on Body
 document.querySelector("body").addEventListener("click", function(e) {
   if (e.target.id === "delete-button") {
     var elementToDelete = e.target.parentNode;
@@ -37,20 +40,39 @@ document.querySelector("body").addEventListener("click", function(e) {
   if (e.target.id === "edit-button") {
     var targetMessage = e.target;
     var elementToEdit = e.target.parentNode;
-    var timeEdit = elementToEdit.children[1]
-    editButton(targetMessage, timeEdit);
+    var timeEdit = elementToEdit.children[1];
+    var userEdit = elementToEdit.children[2];
+    console.log(userEdit);
+    editButton(targetMessage, timeEdit, userEdit);
     userInput.classList.add("hidden");
     editInput.classList.remove("hidden");
   }
+  if (e.target.type === "radio") {
+    userInput.focus();
+  }
 });
+//Event Listener on User Input
 userInput.addEventListener("keypress", function(e) {
   if (e.keyCode == 13) {
     var newMessage = userInput.value;
-    Chatty.appendNewMessage(newMessage);
-    userInput.value = "";
+    clearMessages.removeAttribute("disabled");
+      for (var i = 0; i < userDiv.length; i++){
+        var eachUser = userDiv[i];
+          if (eachUser.checked){
+            user= eachUser.value;
+            if (newMessage === "" || user === ""){
+              userInput.focus();
+              Chatty.getMessages();
+            }  else {
+              Chatty.appendNewMessage(newMessage, user);
+              userInput.value = "";
+            } 
+          }
+       }
   }
 });
-function editButton (targetedMessage, newTime) {
+//Edit Button Function
+function editButton (targetedMessage, newTime, userName) {
       var messageToEdit = "";
       messageToEditId = targetedMessage.parentElement.id;
       editInput.value = document.getElementById(messageToEditId).querySelector("p").innerHTML;
@@ -61,7 +83,7 @@ function editButton (targetedMessage, newTime) {
       } else if (e.keyCode == 13) {
         newTime.innerHTML = "";
         newTime.innerHTML = new moment().format("LT");
-        Chatty.editMessages(messageToEditId, editInput.value);
+        Chatty.editMessages(messageToEditId, editInput.value, userName);
         userInput.classList.remove("hidden");
         editInput.classList.add("hidden");
         userInput.value = "";
@@ -69,11 +91,9 @@ function editButton (targetedMessage, newTime) {
       }
     });
 }
-
-
+//Load XHR
 Chatty.loadFixedMessages();
-
-
+//Dark Theme
 var darkThemeChecked = document.getElementById("dark-theme");
   function makeDarkTheme(){
     if (darkThemeChecked.checked === true){
@@ -85,8 +105,7 @@ var darkThemeChecked = document.getElementById("dark-theme");
     document.querySelector("body").classList.remove("darktheme");
   }
 }
-
-
+//Large Theme
 var largethemeChecked = document.getElementById("large-text");
 function checkboxLarge() {
   if (largethemeChecked.checked === true) {
@@ -98,7 +117,6 @@ function checkboxLarge() {
     document.querySelector("input").classList.remove("largetheme");
   }
 };
-
 //Change Theme Modal
 var backgroundColor = document.getElementById("backgroundColor");
 var fontColor = document.getElementById("fontColor");
