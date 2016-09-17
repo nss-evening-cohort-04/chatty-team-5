@@ -78,7 +78,7 @@ function editButton (targetedMessage, newTime, userName) {
       editInput.value = document.getElementById(messageToEditId).querySelector("p").innerHTML;
       editInput.focus();
       editInput.addEventListener("keypress",function(e){
-          if (e.keyCode !== 13) {
+        if (e.keyCode !== 13) {
         document.getElementById(messageToEditId).querySelector("p").innerHTML = editInput.value;
       } else if (e.keyCode == 13) {
         newTime.innerHTML = "";
